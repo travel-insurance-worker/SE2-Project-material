@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <title>Futuristic Travel</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script defer src="{% static 'js/fontawesome/all.min.js' %}"></script>
+
+
+</head>
+
+<body id="top">
+
+
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+              <!--  <img src="images/logo.svg" alt="Homepage"> -->
+            </a>
+        </div>
+
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <section id="intro" class="s-intro s-intro--static">
+
+        <div class="grid-overlay">
+            <div></div>
+        </div>
+
+        {% if firstName.0 %}
+        <div style="position: absolute; top: 1px; right: 62.5px;">
+          <h3 class="item-title" style="color:white" st>{{ firstName.0 }}</h3>
+        </div>
+        {% endif %}
+
+      <div class="intro-content__notify">
+        <div style="position: relative;">
+            {% if not firstName.0 %}
+            <div style="position: absolute; top: 15px; right: 42.5px;">
+
+                <button  onclick="window.location.href='login/'">Sign in</button>
+            </div>
+            {% endif %}
+
+            {% if firstName.0 %}
+            <div style="position: absolute; top: 120px; right: 42.5px;">
+                <form action="../SignOut" method="post" id="SignOutForm">
+                    {% csrf_token %}
+                    <input name="emailAddress" id="emailAddress" type="hidden" value="{{ emailAddress.0 }}" >
+                    <button type="submit" form="SignOutForm">Sign out</button>
+                </form>
+            </div>
+
+            <div style="position: absolute; top: 180px; right: 46.5px;">
+              <form action="../ChangePassword" method="post" id="change_pass_button">
+                  {% csrf_token %}
+                  <button type="submit" form="change_pass_button">Setting</button>
+              </form>
+            </div>
+
+            {% endif %}
+        </div>
+      </div>
+
+        <div class="row intro-content">
+
+            <div class="column">
+
+                <div class="intro-content__text">
+
+
+                    <h1>
+                    We are currently <br>
+                    insuring your trip <br>
+                    to reduce your stress <br>
+                    of cancellation
+                    </h1>
+
+                </div>
+
+                <div class="intro-content__bottom">
+
+                    <div class="intro-content__counter-wrap">
+
+                    </div>
+
+                    <div class="intro-content__notify modal-trigger">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal">
+            <div class="modal__inner">
+
+                <span class="modal__close"></span>
+
+                <form id="mc-form" class="group mc-form" novalidate="true">
+                    <input type="email" value="" name="EMAIL" class="email h-full-width h-text-center h-add-half-bottom" id="mc-email" placeholder="Email Address" required="">
+                    <input type="submit" name="subscribe" value="Subscribe" class="btn--small h-full-width">
+                    <label for="mc-email" class="subscribe-message"></label>
+                </form>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
