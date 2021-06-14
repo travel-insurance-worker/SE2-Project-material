@@ -15,6 +15,7 @@
 * [Back-End files](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/05-Second%20Sprint/Back-End)
 
 ## [Third Sprint:](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint)
+* [Front-End files](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint/Front-End)
 
 ## Support
 Reach out to us at:
