@@ -24,6 +24,8 @@
 ## [Third Sprint:](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint)
 * [Front-End files](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint/Front-End)
 
+<img width="1200" alt="Screen Shot 2021-06-14 at 11 25 06 AM" src="https://user-images.githubusercontent.com/35253872/121851317-34d67d00-cd03-11eb-889a-1cfcd1ae1ae5.png">
+
 ## Support
 Reach out to us at:
 * boroomand.bahar@yahoo.co.uk
