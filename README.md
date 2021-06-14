@@ -15,6 +15,7 @@
 * [Back-End files](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/05-Second%20Sprint/Back-End)
 
 <img width="1200" alt="Screen Shot 2021-06-14 at 10 44 50 AM" src="https://user-images.githubusercontent.com/35253872/121850036-69493980-cd01-11eb-9805-129ff3259d94.png">
+<img width="1200" alt="Screen Shot 2021-06-14 at 11 14 54 AM" src="https://user-images.githubusercontent.com/35253872/121850309-d230b180-cd01-11eb-89fa-fc1aaed98859.png">
 
 ## [Third Sprint:](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint)
 * [Front-End files](https://github.com/travel-insurance-worker/SE2-Project-material/tree/main/06-Third%20Sprint/Front-End)
