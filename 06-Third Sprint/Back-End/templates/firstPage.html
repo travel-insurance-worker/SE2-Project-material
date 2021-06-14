@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <title>Futuristic Travel</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script defer src="{% static 'js/fontawesome/all.min.js' %}"></script>
+
+
+</head>
+
+<body id="top">
+
+
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+              <!--  <img src="images/logo.svg" alt="Homepage"> -->
+            </a>
+        </div>
+
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <section id="intro" class="s-intro s-intro--static">
+
+        <div class="grid-overlay">
+            <div></div>
+        </div>
+
+        {% if firstName.0 %}
+        <div style="position: absolute; top: 1px; right: 62.5px;">
+          <h3 class="item-title" style="color:white" st>{{ firstName.0 }}</h3>
+        </div>
+        {% endif %}
+
+      <div class="intro-content__notify">
+        <div style="position: relative;">
+            {% if not firstName.0 %}
+            <div style="position: absolute; top: 15px; right: 42.5px;">
+
+                <button  onclick="window.location.href='login/'">Sign in</button>
+            </div>
+            {% endif %}
+
+            {% if firstName.0 %}
+            <div style="position: absolute; top: 120px; right: 42.5px;">
+                <form action="../SignOut" method="post" id="SignOutForm">
+                    {% csrf_token %}
+                    <input name="emailAddress" id="emailAddress" type="hidden" value="{{ emailAddress.0 }}" >
+                    <button type="submit" form="SignOutForm">Sign out</button>
+                </form>
+            </div>
+
+            <div style="position: absolute; top: 180px; right: 46.5px;">
+              <form action="../ChangePassword" method="post" id="change_pass_button">
+                  {% csrf_token %}
+                  <button type="submit" form="change_pass_button">Setting</button>
+              </form>
+            </div>
+
+            {% endif %}
+        </div>
+      </div>
+
+        <div class="row intro-content">
+
+            <div class="column">
+
+                <div class="intro-content__text">
+
+
+                    <h1>
+                    We are currently <br>
+                    insuring your trip <br>
+                    to reduce your stress <br>
+                    of cancellation
+                    </h1>
+
+                </div>
+
+                <div class="intro-content__bottom">
+
+                    <div class="intro-content__counter-wrap">
+
+                    </div>
+
+                    <div class="intro-content__notify modal-trigger">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal">
+            <div class="modal__inner">
+
+                <span class="modal__close"></span>
+
+                <form id="mc-form" class="group mc-form" novalidate="true">
+                    <input type="email" value="" name="EMAIL" class="email h-full-width h-text-center h-add-half-bottom" id="mc-email" placeholder="Email Address" required="">
+                    <input type="submit" name="subscribe" value="Subscribe" class="btn--small h-full-width">
+                    <label for="mc-email" class="subscribe-message"></label>
+                </form>
+
+            </div>
+        </div>
+        <div class="intro-scroll">
+            <a href="#info" class="scroll-link smoothscroll">
+                Scroll For More
+            </a>
+        </div>
+
+    </section>
+    {% if firstName.0 %}
+    <section id="info" class="s-info">
+
+        <div class="vert-line"></div>
+
+        <div class="row info-content">
+            <div class="column">
+
+                <div class="tab-content">
+
+
+
+                    <div id="tab-services" class='tab-content__item'>
+
+                        <div class="row tab-content__item-header">
+                            <div class="column">
+                                <h1>Cancel or change the trip</h1>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="column">
+
+                            </div>
+                        </div>
+
+                        <div class="row services-list block-large-1-2 block-medium-1-2 block-tab-full">
+
+{#                            <div class="column services-list__item">#}
+{#                                <div class="services-list__item-content">#}
+{#                                    <h4 class="item-title">From: Paris <br> To: Amsterdam</h4>#}
+{#                                    <p>#}
+{#                                      Flight Number: Y39J12<br>#}
+{#                                      Date: 12 Sep 2022<br>#}
+{#                                      Time: 19:30<br>#}
+{#                                      Seat: 11A<br>#}
+{#                                      <b>$578</b>#}
+{#                                    </p>#}
+{##}
+{##}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="column services-list__item">#}
+{#                                <div class="services-list__item-content">#}
+{#                                    <h4 class="item-title">From: Rome <br> To: Paris</h4>#}
+{#                                    <p>#}
+{#                                      Flight Number: G42T27<br>#}
+{#                                      Date: 25 Feb 2021<br>#}
+{#                                      Time: 9:15<br>#}
+{#                                      Seat: 9A<br>#}
+{#                                      <b>$418</b>#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="column services-list__item">#}
+{#                                <div class="services-list__item-content">#}
+{#                                    <h4 class="item-title">From: Zürich <br> To: Rome</h4>#}
+{#                                    <p>#}
+{#                                      Flight Number: C22U94<br>#}
+{#                                      Date: 18 Feb 2021<br>#}
+{#                                      Time: 15:45<br>#}
+{#                                      Seat: 5A<br>#}
+{#                                      <b>$520</b>#}
+{#                                    </p>#}
+{##}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="column services-list__item">#}
+{#                                <div class="services-list__item-content">#}
+{#                                    <h4 class="item-title">From: Berlin <br> To: Zürich</h4>#}
+{#                                    <p>#}
+{#                                    Flight Number: A32B39<br>#}
+{#                                    Date: 10 Jan 2021<br>#}
+{#                                    Time: 22:10<br>#}
+{#                                    Seat: 1D<br>#}
+{#                                    <b>$604</b>#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                            </div>#}
+                            {% if Dict.ID.3 %}
+                            <div class="column services-list__item" id="avticDiv">
+                                <div class="services-list__item-content">
+                                    <h4 class="item-title">From: {{ Dict.InitialPoint.3 }} <br> To: {{ Dict.Destination.3 }}</h4>
+                                    <p>
+                                      Flight Number: {{Dict.FlightNumber.3}}<br>
+                                      Date: {{Dict.FlightDate.3}}<br>
+                                      Time: {{ Dict.FlightTime.3 }}<br>
+                                      Seat: {{ Dict.SeatNumberStart.3 }}<br>
+                                      <b>${{ Dict.Price.3 }}</b>
+                                    </p>
+                                    {% if Dict.status.3 == "DONE" %}
+                                    <button id="doneButton">
+                                      The trip is done.
+                                    </button>
+                                    {% else %}
+                                    <button id="activeButton">
+                                      The trip is active.
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if Dict.ID.2 %}
+                            <div class="column services-list__item">
+                                <div class="services-list__item-content">
+                                    <h4 class="item-title">From: {{ Dict.InitialPoint.2 }} <br> To: {{ Dict.Destination.2 }}</h4>
+                                    <p>
+                                      Flight Number: {{ Dict.FlightNumber.2}}<br>
+                                      Date: {{ Dict.FlightDate.2}}<br>
+                                      Time: {{ Dict.FlightTime.2 }}<br>
+                                      Seat: {{ Dict.SeatNumberStart.2 }}<br>
+                                      <b>${{ Dict.Price.2 }}</b>
+                                    </p>
+                                    {% if Dict.status.2 == "DONE" %}
+                                    <button id="doneButton">
+                                      The trip is done.
+                                    </button>
+                                    {% else %}
+                                    <button id="activeButton">
+                                      The trip is active.
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if Dict.ID.1 %}
+                            <div class="column services-list__item">
+                                <div class="services-list__item-content">
+                                    <h4 class="item-title">From: {{ Dict.InitialPoint.1 }} <br> To: {{ Dict.Destination.1 }}</h4>
+                                    <p>
+                                      Flight Number: {{Dict.FlightNumber.1}}<br>
+                                      Date: {{Dict.FlightDate.1}}<br>
+                                      Time: {{ Dict.FlightTime.1 }}<br>
+                                      Seat: {{ Dict.SeatNumberStart.1 }}<br>
+                                      <b>${{ Dict.Price.1 }}</b>
+                                    </p>
+                                    {% if Dict.status.1 == "DONE" %}
+                                    <button id="doneButton">
+                                      The trip is done.
+                                    </button>
+                                    {% else %}
+                                    <button id="activeButton">
+                                      The trip is active.
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if Dict.ID.0 %}
+                            <div class="column services-list__item">
+                                <div class="services-list__item-content">
+                                    <h4 class="item-title">From: {{ Dict.InitialPoint.0 }} <br> To: {{ Dict.Destination.0 }}</h4>
+                                    <p>
+                                    Flight Number: {{Dict.FlightNumber.0}}<br>
+                                    Date: {{Dict.FlightDate.0}}<br>
+                                    Time: {{ Dict.FlightTime.0 }}<br>
+                                    Seat: {{ Dict.SeatNumberStart.0 }}<br>
+                                    <b>${{ Dict.Price.0 }}</b>
+                                    </p>
+                                    {% if Dict.status.0 == "DONE" %}
+                                    <button id="doneButton">
+                                      The trip is done.
+                                    </button>
+                                    {% else %}
+                                    <button id="activeButton">
+                                      The trip is active.
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <footer>
+
+
+
+                    <div class="ss-go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z"></path></svg>
+                        </a>
+                    </div>
+
+                </footer>
+
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
